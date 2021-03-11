@@ -1,13 +1,196 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+
+@layer base {
+  svg {
+    @apply align-baseline;
+  }
+  /*! purgecss end ignore */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
 }
+
+.loader {
+  z-index: 2000 !important;
+}
+
+.animate {
+  animation: rotate 1s infinite;
+  z-index: -1;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.6;
+  }
+  70% {
+    transform: rotate(360deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+::-webkit-scrollbar-track {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(211, 211, 211, 0.8);
+}
+::-webkit-scrollbar {
+  background: rgb(237, 237, 237);
+  width: 0.5rem;
+}
+
+.jobscard:hover .jobscard__title {
+  color: #f99d3a;
+}
+
+.applied-jobs__menu::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #f99d3a;
+}
+
+.ant-tabs-nav {
+  margin: 0 !important;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+.login__bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+    url('https://kmc-app-portal.netlify.app/images/building.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.input__select {
+  color: #333333 !important;
+}
+
+.input__select .ant-select-selector {
+  border-radius: 2px !important;
+  color: #333333 !important;
+}
+
+.input__select .ant-select-selector {
+  border-radius: 2px !important;
+  color: #333333 !important;
+}
+
+.input__select {
+  border-radius: 2px !important;
+}
+
+.input__select-rounded .ant-select-selector {
+  border-radius: 2px !important;
+  color: #333333 !important;
+}
+
+.input__select-rounded .ant-select-selector {
+  border-radius: 10rem !important;
+  color: #333333 !important;
+}
+
+.input__select-rounded {
+  border-radius: 10rem !important;
+}
+
+.input__select .ant-input {
+  color: #333333 !important;
+}
+
+.ant-select-single.ant-select-open .ant-select-selection-item {
+  color: #333333 !important;
+}
+
+input,
+select,
+textarea {
+  color: #333333 !important;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translate(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translate(0%);
+  }
+  100% {
+    transform: translate(-100%);
+    opacity: 0;
+    display: none;
+  }
+}
+
+.ant-card,
+.ant-table,
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active,
+.ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab-active,
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab,
+.ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab,
+.ant-drawer-content {
+  background-image: url('https://cdn.kmc.solutions/project-statics/card-bg.png');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-blend-mode: luminosity;
+  background-size: auto 100%;
+}
+
+.ant-radio-button-wrapper:first-child,
+.ant-radio-button-wrapper:last-child {
+  border-radius: 2px !important;
+}
+
+.ant-tabs-nav-list {
+  padding-left: 6px;
+}
+
+.careers__drawer-checkbox .ant-checkbox-group-item {
+  display: block;
+}
+.ant-tabs-tab {
+  backgrlind-color: rgba(17, 24, 39, 1) !important;
+}
+
+.closeNav {
+  animation: slideOut 0.2s ease-out;
+  animation-fill-mode: forwards;
+}
+.openNav {
+  animation: slideIn 0.2s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.siderToggle {
+  transition: all 0.2 ease-out;
+  transform: rotateY(180deg);
+}
+
+/*! purgecss end ignore */
+
+@tailwind utilities;
